@@ -6,8 +6,12 @@
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
+    <h1>{{ salutation }}</h1>
+    <!-- HTML Codes by Quackit.com -->
+
     {% for student in students %}
     <p><a href="/directory/{{ student.username }}">{{ student.first_name }} {{ student.last_name }}</a></p>
     {% endfor %}
+    <marquee class="html-marquee" direction="left" behavior="scroll" scrollamount="13" ><img src="http://static.tumblr.com/44c6f308bd6a92406805a3009c1daffb/ouqcjhi/1mZnfb8ky/tumblr_static_8jyjp8npy7swkcos0ogscss0c.png" height="65" width="150"> Go Tiger!</marquee>
 </body>
 </html>

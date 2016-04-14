@@ -12,13 +12,13 @@ def view_hello():
 def view_demo_1():
     return render_template('demo-1.html', name='Justin')
 
-@app.route('/demo-2/<name>')
+@app.route('/demo-2/<name>/')
 def view_demo_2(name):
     return render_template('demo-1.html', name=name)
 
 @app.route('/demo-3')
 def view_demo_3():
-    names = ['Alice', 'Bob', 'Charlie']
+    names = ['Alice', 'Bob', 'Charlie', 'Eva']
     return render_template('demo-3.html', salutation='Roll call', names=names)
 
 # STUDENT DIRECTORY APP
@@ -42,11 +42,29 @@ def get_data():
 
 @app.route('/directory')
 def view_directory():
-    return 'FIXME'
+    student_list = get_data()
+    return render_template('directory.html', salutation='Student Directory',students=student_list)
 
 @app.route('/directory/<username>')
 def view_student(username):
-    return 'FIXME'
+    student_list = get_data()
+
+    index = 0
+
+    for student in student_list:
+        if username == student.username:
+            current_student = student
+
+            if student_list.index(student) == 0:
+                prev_student = student_list[len(student_list) - 1]
+                next_student = student_list[1]
+            elif student_list.index(student) == len(student_list) - 1:
+                prev_student = student_list[student_list.index(student) - 1]
+                next_student = student_list[0]
+            else:
+                prev_student = student_list[student_list.index(student) - 1]
+                next_student = student_list[student_list.index(student) + 1]
+    return render_template('student.html',student=current_student, prev_student=prev_student, next_student=next_student)
 
 # DON'T TOUCH THE CODE BELOW THIS LINE
 

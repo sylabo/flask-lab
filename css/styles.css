@@ -1,1 +1,38 @@
-h1 { color:#FF0000; }
+  h1 {
+    font-size:350%;
+    font-family:futura;
+    font-stretch: normal;
+    text-align: center;
+    color: #0066FF;
+    background: orange}
+
+
+  p {
+    font-family:futura;
+    text-align: center;
+    }
+
+    .html-marquee {
+    height:100px;
+    width:1200px;
+    background-color:FFFFFF;
+    background-image:url(http://);
+    font-family:Garamond;
+    font-size:48px;
+    color:orange;
+    font-weight:bold;
+    border-width:4;
+    border-style:none;
+    border-color:FFFFFF;}
+
+
+  body {
+  background-image: url("http://i.forbesimg.com/media/lists/colleges/occidental-college_416x416.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: right;
+  }
+
+  a {
+    color: orange;
+}
